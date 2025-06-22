@@ -1,7 +1,7 @@
 # Complaint Topic Classifier
 
 ## Overview
-This repository contains an automated consumer complaint classification system for the banking sector, developed as part of an M.Sc. in Data Analytics project by Aditya Pandey (Student ID: x23275286). Using **DistilBERT**, it classifies 21,072 complaints from the U.S. Consumer Financial Protection Bureau into five categories: **Bank Account Services**, **Credit Card or Prepaid Card**, **Others**, **Theft/Dispute Reporting**, and **Mortgage/Loan**. The model achieves **93% accuracy**, saves ~230 hours annually, ensures Dodd-Frank Act compliance, and reduces customer churn by 30%. It is deployed on Hugging Face Spaces: [https://huggingface.co/spaces/KNIGHT-ADITYA/classifymyticket](https://huggingface.co/spaces/KNIGHT-ADITYA/classifymyticket).
+This repository contains an automated consumer complaint classification system for the banking sector, Using **DistilBERT**, it classifies 21,072 complaints from the U.S. Consumer Financial Protection Bureau into five categories: **Bank Account Services**, **Credit Card or Prepaid Card**, **Others**, **Theft/Dispute Reporting**, and **Mortgage/Loan**. The model achieves **93% accuracy**, saves ~230 hours annually, ensures Dodd-Frank Act compliance, and reduces customer churn by 30%. It is deployed on Hugging Face Spaces: [https://huggingface.co/spaces/KNIGHT-ADITYA/classifymyticket](https://huggingface.co/spaces/KNIGHT-ADITYA/classifymyticket).
 
 ## Features
 - **Automated Classification**: Categorizes complaints with 87% accuracy (F1-scores: 0.80–0.89).
