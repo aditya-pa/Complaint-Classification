@@ -4,7 +4,6 @@
 This repository contains an automated consumer complaint classification system for the banking sector, Using **DistilBERT**, it classifies 21,072 complaints from the U.S. Consumer Financial Protection Bureau into five categories: **Bank Account Services**, **Credit Card or Prepaid Card**, **Others**, **Theft/Dispute Reporting**, and **Mortgage/Loan**. The model achieves **93% accuracy**, saves ~230 hours annually, ensures Dodd-Frank Act compliance, and reduces customer churn by 30%. It is deployed on Hugging Face Spaces: [https://huggingface.co/spaces/KNIGHT-ADITYA/classifymyticket](https://huggingface.co/spaces/KNIGHT-ADITYA/classifymyticket).
 
 ## Features
-- **Automated Classification**: Categorizes complaints with 87% accuracy (F1-scores: 0.80–0.89).
 - **Efficiency**: Eliminates ~230 hours of manual work yearly.
 - **Compliance**: Supports Dodd-Frank Act requirements.
 - **User Interface**: Streamlit and Gradio apps for real-time predictions.
@@ -12,11 +11,11 @@ This repository contains an automated consumer complaint classification system f
 
 ## Repository Structure
 - `app.py`: Streamlit app for complaint classification.
-- `train_model.py`: Script for data preprocessing, training, and evaluation.
+- `train_model.ipynb`: Script for data preprocessing, training, and evaluation.
 - `requirements.txt`: Project dependencies.
-- `data/`: Directory for CFPB dataset (`complaints-2021-05-14_08_16.json`).
-- `models/`: Stores trained DistilBERT model and tokenizer.
-- `notebooks/`: Jupyter notebooks for EDA and model development.
+- `data/`: (EMPTY) Directory for CFPB dataset (`complaints-2021-05-14_08_16.json`).
+- `models/`: (EMPTY) Stores trained DistilBERT model and tokenizer.
+
 
 ## Installation
 1. **Clone Repository**:
