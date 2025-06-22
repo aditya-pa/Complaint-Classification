@@ -1,10 +1,10 @@
-import streamlit as st
-from transformers import DistilBertForSequenceClassification, DistilBertTokenizer
+import gradio as gr
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-# Load model and tokenizer
-model = DistilBertForSequenceClassification.from_pretrained("distilbert_complaint_classifier_final")
-tokenizer = DistilBertTokenizer.from_pretrained("distilbert_complaint_classifier_final")
+# Load the tokenizer and model from the model folder
+tokenizer = AutoTokenizer.from_pretrained("./model")
+model = AutoModelForSequenceClassification.from_pretrained("./model", trust_remote_code=True)
 
 # Set the device (CPU or GPU)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -42,18 +42,15 @@ def predict_complaint_topic(complaint_text):
     predicted_topic = topic_mapping[predicted_class_id]
     return predicted_topic
 
-# Streamlit UI setup
-st.title("Complaint Topic Classifier")
-st.write("This model classifies complaints into different topics like 'Bank Account Services', 'Credit Card or Prepaid Card', etc.")
+# Create Gradio interface
+iface = gr.Interface(
+    fn=predict_complaint_topic,  # Function to call for prediction
+    inputs=gr.Textbox(label="Enter your complaint text"),  # Input type (Textbox)
+    outputs=gr.Textbox(label="Predicted Complaint Topic"),  # Output type (Textbox)
+    live=True,  # Enable live prediction as the user types
+    title="Complaint Topic Classifier",  # Title of the app
+    description="This model classifies complaints into different topics like 'Bank Account Services', 'Credit Card or Prepaid Card', etc."  # Description of the app
+)
 
-# Input for complaint text
-complaint_text = st.text_area("Enter your complaint text")
-
-# Predict button
-if st.button("Predict"):
-    if complaint_text:
-        predicted_topic = predict_complaint_topic(complaint_text)
-        st.subheader("Predicted Complaint Topic")
-        st.write(predicted_topic)
-    else:
-        st.warning("Please enter a complaint text.")
+# Launch the interface
+iface.launch()
